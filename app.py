@@ -8,7 +8,7 @@ Bootstrap(app)
 
 @app.route('/')
 def index():
-    TITLE = 'Facial Expressions Recognition'
+    TITLE = 'DLearning EmoRecognizer'
     return render_template('index.html', TITLE=TITLE)
 
 def gen(camera):
