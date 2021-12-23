@@ -3,6 +3,7 @@ astor==0.8.0
 bleach==3.1.4
 gast==0.2.0
 grpcio==1.13.0
+gunicorn==20.0.4
 h5py==2.8.0
 html5lib==0.9999999
 Keras==2.2.0
