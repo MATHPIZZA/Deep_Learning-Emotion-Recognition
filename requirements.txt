@@ -4,6 +4,8 @@ bleach==4.1.0
 gast==0.2.1
 grpcio==1.43.0
 gunicorn==20.0.4
+flask==2.0.2
+Flask-Bootstrap==3.3.7.1
 h5py==3.6.0
 html5lib==1.1
 Keras==2.7.0
