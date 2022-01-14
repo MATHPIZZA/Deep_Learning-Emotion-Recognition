@@ -1,25 +1,58 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Face Emotion Recognition</title>
+   
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
 {% extends "bootstrap/base.html" %}
 {% block title %} {{ TITLE }} {% endblock %}
 {% block styles %} {{ super() }}
 
 <!-- Custom styles -->
-<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />-->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 {% endblock %}
 
 {% block content %}
-
-<h1 class="entry-title" style="text-align: center;">Распознавание эмоций с Deep learning</h1>
+<body>
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <ul class=flashes>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+   </ul>
+   {% endif %}
+   {% endwith %}
+   <center>
+   <nav class="navbar navbar-dark bg-dark ">
+   
+   
+      <h1<font color="red" class="entry-title" style="text-align: center;" >Распознавание объектов с Deep learning</h1>
+	 
+   </nav>
+    </center>
 <h1 class="entry-title" style="text-align: center;"><img style="font-size: 14px; font-family: -webkit-standard;" src="/static/detect.png" alt="" width="512" height="128" /></h1>
-<p style="text-align: center;"></p>
+
+
+   <div class="container">
+      <div class="starter-template">
 
 <div id="container" align=center>
-  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-
-  <div>
+<center>
+  <img id="videoElement" src="{{ url_for('video_feed') }}" alt="" width="480px" height="360px">
+</center>
+  </div>
+  
     <br>
   </div>
+
 
 
   <div>
@@ -28,18 +61,24 @@
 
 
 </div>
+
 {% endblock %}
 
 {% block scripts %}
 <!-- Imports -->
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <!-- Scripts -->
 <script
   type="text/javascript"
   src="{{ url_for('static', filename='script.js') }}"
 ></script>
-
+<footer>
+	<nav class="navbar navbar-dark bg-dark ">
+   <center>
+      <h5 class="entry-title" style="text-align: center;">&#169; Александр Коротких - 2022 Tessaract.co</h5>
+	  </center>
+   </nav>
+</footer>
 {{ super() }}
 {% endblock %}
-
