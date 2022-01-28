@@ -9,6 +9,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
+	color:white;
     font-weight: normal;
     line-height: 1.5em;
     width: 800px;
@@ -20,15 +21,15 @@ body {
 #container {
     margin: 0px auto;
     margin-top: 40px;
-    width: 100%;
+    width: 800px;
     height: 450px;
     border: 10px #333 solid;
     background-color: black;
 }
 
 #container #videoElement {
-    width: auto;
-    height: 100%;
+    width: 780px;
+    height: 430px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -37,4 +38,21 @@ body {
 
 #control {
     margin-top: 40px;
+}
+
+
+.center-img {
+  text-align: center;
+
+}
+
+.footer {
+  flex: 0 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+	color:white;
+    font-weight: normal;
+    line-height: 1.5em;
+    width: 800px;
+    margin: auto;
 }
