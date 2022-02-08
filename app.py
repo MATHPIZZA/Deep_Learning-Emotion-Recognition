@@ -13,9 +13,9 @@ def index():
     TITLE = 'DLearning EmoRecognizer'
     return render_template('index.html', TITLE=TITLE)
 
-def gen(camera):
+def gen(video):
     while True:
-        frame = camera.get_frame()
+        frame = video.get_frame()
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
