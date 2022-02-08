@@ -23,6 +23,7 @@ def gen(video):
 
 @app.route('/video_feed')
 def video_feed():
+    global video
     return Response(gen(Video()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
