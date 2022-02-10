@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, Response, url_for
 from flask_bootstrap import Bootstrap
-from camera import Video
+from camera import VideoCamera
 
 
 app = Flask(__name__)
