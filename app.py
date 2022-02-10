@@ -24,10 +24,11 @@ def gen(video):
 @app.route('/video_feed')
 def video_feed():
     global video
-    return Response(gen(Video()),
+    return Response(gen(VideoCamera()),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, threaded=True)
+    #app.run(host='0.0.0.0', port=5000, threaded=True)
+    app.run()
 
 
