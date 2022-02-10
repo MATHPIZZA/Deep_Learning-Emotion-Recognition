@@ -76,7 +76,7 @@
                              navigator.mozGetUserMedia ||
                              navigator.msGetUserMedia);
 
-      var video;
+      var img;
       var VideoCamera;
 
       function startVideoCamera() {
@@ -85,14 +85,14 @@
 
               // constraints
               {
-                 video: true,
+                 img: true,
                  audio: false
               },
 
               // successCallback
               function(video_feed) {
-                  video = document.querySelector('video');
-                 video.srcObject = video_feed;
+                  img = document.querySelector('video');
+                 img.srcObject = video_feed;
                 VideoCamera  = video_feed;
               },
 
