@@ -113,32 +113,7 @@
         VideoCamera.getTracks().forEach(function(track) {
   track.stop();});
       }
-      //---------------------
-      // TAKE A SNAPSHOT CODE
-      //---------------------
-      var canvas, ctx;
-        function snapshot() {
-         // Draws current image from the video element into the canvas
-        ctx.drawImage(video, 0,0, canvas.width, canvas.height);
-        //canvas = document.getElementById("myCanvas");
-        //var dataURL = canvas.toDataURL('image/jpg', 1.0);
-        //document.querySelector('#dl-btn').href = dataURL;
-
-        //console.log(dataURL)
-
-      }
-      function init() {
-        // Get the canvas and obtain a context for
-        // drawing in it
-        canvas = document.getElementById("myCanvas");
-        ctx = canvas.getContext('2d');
-        var dataURL = canvas.toDataURL('image/jpg', 1.0);
-        
-      }
       
-      
-
-    
 
   </script>
 </center>
