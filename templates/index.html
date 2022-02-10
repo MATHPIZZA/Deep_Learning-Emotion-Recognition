@@ -77,6 +77,7 @@
                              navigator.msGetUserMedia);
 
       var img;
+      var video;	 
       var VideoCamera;
 
       function startVideoCamera() {
@@ -86,6 +87,7 @@
               // constraints
               {
                  img: true,
+		 video: true,     
                  audio: false
               },
 
