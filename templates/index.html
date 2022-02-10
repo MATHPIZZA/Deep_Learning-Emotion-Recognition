@@ -61,7 +61,7 @@
 	
 
 	<center>
- <img id="video" autoplay srcObject="{{ url_for('video_feed') }}" alt="" width="480px" height="360px">
+ <img id="video" autoplay src="{{ url_for('video_feed') }}" alt="" width="480px" height="360px">
 		<button onclick="startVideoCamera();"<font color="green" >Включить распознование</button>
 		<button onclick="stopVideoCamera();"<font color="red" >Остановить распознавание</button>
 		 </center>
@@ -76,7 +76,7 @@
                              navigator.mozGetUserMedia ||
                              navigator.msGetUserMedia);
 
-      var img;
+      
       var video;	 
       var VideoCamera;
 
@@ -86,16 +86,25 @@
 
               // constraints
               {
-                 img: true,
-		 video: true,     
+                 video: true,     
                  audio: false
               },
 
               // successCallback
-              function(video_feed) {
-                  video = document.querySelector('video');
-                 img.srcObject = video_feed;
-                VideoCamera  = video_feed;
+              var ctx = document.getElementById("canvas").getContext('2d');
+    var img = new Image();
+    img.src = "{{ url_for('video_feed') }}";
+
+    // need only for static image
+    //img.onload = function(){   
+    //    ctx.drawImage(img, 0, 0);
+    //};
+
+    // need only for animated image
+    function refreshCanvas(){
+        ctx.drawImage(img, 0, 0);
+    };
+    window.setInterval("refreshCanvas()", 50);
               },
 
               // errorCallback
