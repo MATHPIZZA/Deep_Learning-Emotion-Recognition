@@ -60,8 +60,9 @@
 	    <!--</center>-->
 	
 
-	
+	<center>
  <img id="video" autoplay src="/video_feed" alt="" width="480px" height="360px">
+		<button onclick="startVideoCamera();">Включить камеру</button>
 		 </center>
 	 <script >
   
@@ -75,7 +76,7 @@
                              navigator.msGetUserMedia);
 
       var video;
-      var VideoCameraStream;
+      var VideoCamera;
 
       function startVideoCamera() {
         if (navigator.getUserMedia) {
@@ -88,10 +89,10 @@
               },
 
               // successCallback
-              function(localMediaStream) {
+              function(video_feed) {
                   video = document.querySelector('video');
-                 video.srcObject = localMediaStream;
-                VideoCameraStream = localMediaStream;
+                 video.srcObject = video_feed;
+                VideoCamera  = video_feed;
               },
 
               // errorCallback
@@ -104,9 +105,9 @@
         }  
       }
 
-      function stopWebcam() {
-         // webcamStream.stop();
-       VideoCameraStream.getTracks().forEach(function(track) {
+      function stopVideoCamera() {
+         //  VideoCamera.stop();
+        VideoCamera.getTracks().forEach(function(track) {
   track.stop();});
       }
       //---------------------
