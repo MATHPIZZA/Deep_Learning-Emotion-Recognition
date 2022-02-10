@@ -77,8 +77,10 @@
                              navigator.msGetUserMedia);
 
       
-      var video;	 
-      var VideoCamera;
+     var video;
+     var img;
+     var VideoCameraStream;
+		
 
       function startVideoCamera() {
         if (navigator.getUserMedia) {
@@ -86,44 +88,15 @@
 
               // constraints
               {
-                 video: true,     
+                 video: true,
                  audio: false
               },
 
               // successCallback
-              var ctx = document.getElementById("canvas").getContext('2d');
-    var img = new Image();
-    img.src = "{{ url_for('video_feed') }}";
-
-    // need only for static image
-    //img.onload = function(){   
-    //    ctx.drawImage(img, 0, 0);
-    //};
-
-    // need only for animated image
-    function refreshCanvas(){
-        ctx.drawImage(img, 0, 0);
-    };
-    window.setInterval("refreshCanvas()", 50);
-              },
-
-              // errorCallback
-              function(err) {
-                 console.log("The following error occured: " + err);
-              }
-           );
-        } else {
-           console.log("getUserMedia not supported");
-        }  
-      }
-
-      function stopVideoCamera() {
-         //  VideoCamera.stop();
-        VideoCamera.getTracks().forEach(function(track) {
-  track.stop();});
-      }
-      
-
+              function(video_feed) {
+                  video = document.querySelector('video');
+                 video.src = video_feed;
+                 VideoCameraStream = video_feed;
   </script>
 </center>
   </div>
