@@ -1,4 +1,3 @@
-pip-upgrader
 absl-py
 astor
 bleach
